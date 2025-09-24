@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online Real Estate Rental Portal</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background-image: url('Images/musonda.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      color: #333;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background-color: rgba(240, 230, 250, 0.85);
+      border-bottom: 2px solid #9370db;
+    }
+
+    .navbar .logo span {
+      color: #333;
+      font-weight: bold;
+      font-size: 1.3rem;
+    }
+
+    .menu ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    .menu ul li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    .menu ul li a:hover,
+    .menu ul li a.active {
+      color: #6a5acd;
+    }
+
+    .main-container {
+      display: flex;
+      flex: 1;
+      justify-content: center;
+      align-items: center;
+      padding: 50px 20px;
+      gap: 50px;
+      flex-wrap: wrap;
+    }
+
+    .welcome {
+      flex: 1;
+      min-width: 300px;
+      max-width: 600px;
+      text-align: left;
+      background: rgba(255, 228, 225, 0.85);
+      padding: 25px;
+      border-radius: 12px;
+    }
+
+    .welcome h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: #ff7f50;
+    }
+
+    .welcome p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+    }
+
+    .login-form-container {
+      flex: 1;
+      min-width: 300px;
+      max-width: 400px;
+      background: rgba(240, 248, 255, 0.95);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      transform: translateX(100%);
+      animation: slideIn 1s forwards;
+    }
+
+    @keyframes slideIn {
+      to {
+        transform: translateX(0);
+      }
+    }
+
+    .login-form h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #6a5acd;
+    }
+
+    .input-group {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+      padding: 10px;
+      background-color: #f0f8ff;
+      border-radius: 5px;
+    }
+
+    .input-group i {
+      margin-right: 10px;
+      color: #6a5acd;
+    }
+
+    .input-group input {
+      width: 100%;
+      border: none;
+      background: transparent;
+      font-size: 1rem;
+      outline: none;
+      color: #333;
+    }
+
+    .remember-me {
+      font-size: 0.9rem;
+      margin-bottom: 15px;
+    }
+
+    .login-button input {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 5px;
+      background-color: #6a5acd;
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .login-button input:hover {
+      background-color: #483d8b;
+    }
+
+    .links {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .links a {
+      color: #6a5acd;
+      text-decoration: none;
+    }
+
+    .links a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 900px) {
+      .main-container {
+        flex-direction: column;
+        align-items: center;
+      }
+      .welcome {
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="logo">
+      <span><i class="fas fa-building"></i> REAL ESTATE RENTAL PORTAL</span>
+    </div>
+    <nav class="menu">
+      <ul class="nav-links">
+        <li><a href="index.html" class="active"><i class="fas fa-home"></i> HOME</a></li>
+        <li><a href="About.html"><i class="fas fa-info-circle"></i> ABOUT</a></li>
+        <li><a href="Property type.html"><i class="fas fa-building"></i> PROPERTY TYPE</a></li>
+        <li><a href="contact.html"><i class="fas fa-envelope"></i> CONTACT</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Main Container -->
+  <div class="main-container">
+    <!-- Welcome Section -->
+    <div class="welcome">
+      <h1><i class="fas fa-house-user"></i> Welcome to Rental Portal</h1>
+      <p>
+        <i class="fas fa-search-location"></i> Find your next home with ease. Browse available rentals, 
+        connect with verified landlords, and schedule property visits — all in one place.
+      </p>
+    </div>
+
+    <!-- Login Form -->
+    <div class="login-form-container">
+      <form class="login-form" id="loginForm">
+        <h2><i class="fas fa-sign-in-alt"></i> Login</h2>
+
+        <div class="input-group">
+          <i class="fas fa-envelope"></i>
+          <input type="email" id="email" name="email" placeholder="Email" required>
+        </div>
+
+        <div class="input-group">
+          <i class="fas fa-lock"></i>
+          <input type="password" id="password" name="password" placeholder="Password" required>
+        </div>
+
+        <div class="remember-me">
+          <input type="checkbox" id="remember" name="remember">
+          <label for="remember"> Remember me</label>
+        </div>
+
+        <div class="login-button">
+          <input type="submit" value="Login">
+        </div>
+
+        <div class="links">
+          <p><i class="fas fa-question-circle"></i> <a href="Forgot-password.html">Forgot password?</a></p>
+          <p><i class="fas fa-user-plus"></i> Don't have an account? <a href="Signup.html">Register here</a></p>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById("loginForm");
+
+    form.addEventListener("submit", async function(event) {
+      event.preventDefault();
+
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value.trim();
+
+      if (email === "" || password === "") {
+        alert("Please fill in both email and password.");
+        return;
+      }
+
+      try {
+        const response = await fetch("http://localhost:3000/login", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email, password })
+        });
+
+        const data = await response.json();
+
+        if (data.success) {
+          window.location.href = data.redirect;
+        } else {
+          alert(data.message || "Login failed.");
+        }
+      } catch (error) {
+        alert("Server error. Please try again later.");
+        console.error(error);
+      }
+    });
+  </script>
+</body>
+</html>

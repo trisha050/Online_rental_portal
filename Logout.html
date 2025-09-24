@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Logout</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+      text-align: center;
+    }
+
+    .logout-box {
+      background: white;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      animation: fadeIn 1s ease forwards;
+    }
+
+    .logout-box h1 {
+      color: #4b6cb7;
+      margin-bottom: 20px;
+    }
+
+    .logout-box p {
+      margin-bottom: 30px;
+      font-size: 1.1rem;
+      color: #333;
+    }
+
+    .logout-btn {
+      padding: 12px 25px;
+      background: #ff6b6b;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: 0.3s;
+    }
+
+    .logout-btn:hover {
+      background: #ff3b3b;
+      transform: translateY(-2px);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="logout-box">
+    <h1>Logging Out...</h1>
+    <p>You are being redirected to the homepage.</p>
+    <button class="logout-btn" id="logoutBtn">Go to Home</button>
+  </div>
+
+  <script>
+    document.getElementById("logoutBtn").addEventListener("click", function() {
+      // Clear session/local storage if any
+      localStorage.clear();
+      sessionStorage.clear();
+
+      // Redirect to homepage
+      window.location.href = "index.html"; // change to your homepage
+    });
+
+    // Automatically redirect after 2 seconds
+    setTimeout(() => {
+      localStorage.clear();
+      sessionStorage.clear();
+      window.location.href = "index.html";
+    }, 2000);
+  </script>
+
+</body>
+</html>

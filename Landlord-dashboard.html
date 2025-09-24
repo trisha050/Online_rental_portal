@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Landlord Dashboard</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+      background: url(Images/landlord.avif) no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: 220px;
+      background: rgba(44, 62, 80, 0.9);
+      padding-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      animation: slideIn 1.5s ease forwards;
+      opacity: 0;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .sidebar ul li {
+      margin: 1rem 0;
+      text-align: center;
+    }
+
+    .sidebar ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      display: block;
+      padding: 10px;
+      transition: 0.3s;
+      border-radius: 6px;
+    }
+
+    .sidebar ul li a:hover {
+      background: #f39c12;
+      color: black;
+    }
+
+    /* Content */
+    .content {
+      flex: 1;
+      padding: 2rem;
+      margin: 1rem;
+      animation: fadeIn 2s ease forwards;
+      opacity: 0;
+    }
+
+    .content h1 {
+      margin-bottom: 1rem;
+      color: #f1c40f;
+      text-shadow: 2px 2px 5px black;
+    }
+
+    .content ul {
+      padding-left: 1.5rem;
+      list-style: disc;
+    }
+
+    .content li {
+      margin: 0.5rem 0;
+      color: #ecf0f1;
+      font-weight: bold;
+      text-shadow: 1px 1px 3px black;
+    }
+
+    /* Animations */
+    @keyframes slideIn {
+      from {
+        transform: translateX(-100%);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Sidebar Menu -->
+  <nav class="sidebar">
+    <ul>
+      <li><a href="property-request.html">Property-Request</a></li>
+      <li><a href="proof-of-payment.html">Proof-of-Payment</a></li>
+      <li><a href="view-status.html">View-Status</a></li>
+      <li><a href="logout.html">Logout</a></li>
+    </ul>
+  </nav>
+
+  <!-- Dashboard Content -->
+  <main class="content">
+    <h1>Landlord Dashboard</h1>
+    <ul>
+      <li>🏘️ Submit New Property Request</li>
+      <li>💳 Make Payments for Property Posting</li>
+      <li>📊 View Property Request Status (Pending, Approved, Rejected)</li>
+      <li>📑 Upload and View Proof of Payments</li>
+    </ul>
+  </main>
+</body>
+</html>

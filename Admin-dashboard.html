@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+      background-image: url(Images/01.jpeg);
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: 220px;
+      background: rgba(44, 62, 80, 0.9);
+      padding-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      animation: slideIn 1.5s ease forwards;
+      opacity: 0;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .sidebar ul li {
+      margin: 1rem 0;
+      text-align: center;
+    }
+
+    .sidebar ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      display: block;
+      padding: 10px;
+      transition: 0.3s;
+      border-radius: 6px;
+    }
+
+    .sidebar ul li a:hover {
+      background: #f39c12;
+      color: black;
+    }
+
+    /* Content */
+    .content {
+      flex: 1;
+      padding: 2rem;
+      margin: 1rem;
+      animation: fadeIn 2s ease forwards;
+      opacity: 0;
+    }
+
+    .content h1 {
+      margin-bottom: 1rem;
+      color: #f1c40f;
+      text-shadow: 2px 2px 5px black;
+    }
+
+    .content ul {
+      padding-left: 1.5rem;
+      list-style: disc;
+    }
+
+    .content li {
+      margin: 0.5rem 0;
+      color: #ecf0f1;
+      font-weight: bold;
+      text-shadow: 1px 1px 3px black;
+    }
+
+    /* Animations */
+    @keyframes slideIn {
+      from { transform: translateX(-100%); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <!-- Sidebar -->
+  <nav class="sidebar">
+    <ul>
+      <li><a href="view-Tenants.html">View-Tenants</a></li>
+      <li><a href="Reply-to-Tenants.html">Reply-to-Tenants</a></li>
+      <li><a href="manage-users.html">Manage-Users</a></li>
+      <li><a href="Approve-listings.html">Approve-Listings</a></li>
+      <li><a href="Post-Property.html">Post-Property</a></li>
+      <li><a href="verify-payments.html">Verify-Payments</a></li>
+      <li><a href="View-messages.html">View-Messages</a></li>
+      <li><a href="Logout.html">Logout</a></li>
+    </ul>
+  </nav>
+
+  <!-- Dashboard Content -->
+  <main class="content">
+    <h1>Admin Dashboard</h1>
+    <ul>
+      <li>👥 View and Manage Tenants</li>
+      <li>📨 Reply to Tenant Messages</li>
+      <li>🔐 Manage User Accounts</li>
+      <li>🏘️ Approve or Reject Property Listings</li>
+      <li>📝 Post Properties on the Website</li>
+      <li>💳 Verify Landlord Payments</li>
+      <li>📬 Read All Admin Messages</li>
+    </ul>
+  </main>
+</body>
+</html>

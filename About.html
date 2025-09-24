@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Renter Portal</title>
+
+  <!-- Font Awesome for icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: url('Images/background.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #333;
+    }
+
+    /* Navigation Bar */
+    nav.menu {
+      background: rgba(0, 0, 0, 0.8);
+      padding: 15px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav.menu .nav-links {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      list-style: none;
+    }
+
+    nav.menu .nav-links li a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: bold;
+      padding: 8px 15px;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+    }
+
+    nav.menu .nav-links li a:hover {
+      background: #0078d7;
+      color: #fff;
+    }
+
+    nav.menu .nav-links li a.active {
+      background: #00bcd4;
+      color: white;
+    }
+
+    /* Main Section */
+    .content {
+      text-align: center;
+      margin: 60px auto;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 40px;
+      border-radius: 12px;
+      width: 70%;
+      max-width: 800px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+
+    .content h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: #0078d7;
+    }
+
+    .content p {
+      font-size: 1.2rem;
+      line-height: 1.7;
+      color: #444;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="menu">
+    <ul class="nav-links">
+      <li><a href="index.html"><i class="fas fa-home"></i> HOME</a></li>
+      <li><a href="About.html"><i class="fas fa-info-circle"></i> ABOUT</a></li>
+      <li><a href="Property type.html"><i class="fas fa-building"></i> PROPERTY TYPE</a></li>
+      <li><a href="contact.html" class="active"><i class="fas fa-envelope"></i> CONTACT</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="content">
+    <h1>What is Renter Portal?</h1>
+    <p>
+      Renter Portal is a modern online platform designed to make renting properties simple, 
+      transparent, and convenient. It connects landlords and tenants in one place, 
+      offering easy property listings, smooth search options, and clear communication.  
+      Our goal is to save time, reduce stress, and bring trust to the rental process for everyone.
+    </p>
+  </main>
+
+</body>
+</html>

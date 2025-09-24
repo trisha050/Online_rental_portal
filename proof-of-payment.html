@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Make Payment | Landlord Dashboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #2c3e50, #34495e);
+      margin: 0;
+      padding: 0;
+      color: #ecf0f1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 600px;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+      animation: fadeIn 1.2s ease;
+    }
+
+    h1 {
+      text-align: center;
+      color: #f1c40f;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 5px black;
+    }
+
+    label {
+      display: block;
+      margin: 15px 0 6px;
+      font-weight: bold;
+      font-size: 14px;
+      color: #f39c12;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 12px;
+      border-radius: 8px;
+      border: none;
+      font-size: 15px;
+      margin-bottom: 10px;
+      outline: none;
+      background: rgba(255, 255, 255, 0.9);
+      color: black;
+      transition: 0.3s;
+    }
+
+    input:focus, select:focus {
+      box-shadow: 0 0 8px #f39c12;
+      transform: scale(1.02);
+    }
+
+    input[type="file"] {
+      padding: 8px;
+      background: #fff8e1;
+      border: 1px dashed #f39c12;
+      cursor: pointer;
+    }
+
+    .note {
+      background: rgba(255, 255, 255, 0.1);
+      color: #f1c40f;
+      padding: 10px;
+      border-radius: 8px;
+      font-size: 13px;
+      margin-bottom: 15px;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: 8px;
+      background: #f39c12;
+      color: black;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #d35400;
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    .status {
+      margin-top: 15px;
+      text-align: center;
+      font-weight: bold;
+      display: none;
+      color: #27ae60;
+      animation: fadeIn 0.8s ease;
+    }
+
+    a {
+      display: block;
+      text-align: center;
+      margin-top: 20px;
+      text-decoration: none;
+      color: #f1c40f;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    a:hover {
+      color: #f39c12;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>💳 Make a Payment</h1>
+    <form id="paymentForm">
+      <label for="amount">Amount (ZMW)</label>
+      <input type="number" id="amount" placeholder="Enter amount..." required>
+
+      <label for="method">Payment Method</label>
+      <select id="method" required>
+        <option value="">-- Select Method --</option>
+        <option value="MTN">MTN Mobile Money</option>
+        <option value="Airtel">Airtel Money</option>
+        <option value="Bank">Bank Transfer</option>
+      </select>
+
+      <label for="proof">Upload Proof of Payment</label>
+      <input type="file" id="proof" accept="image/*,application/pdf" required>
+
+      <div class="note">
+        ✅ Accepted formats: JPG, PNG, or PDF <br>
+        📌 Example: Screenshot of MoMo transaction or bank receipt.
+      </div>
+
+      <button type="submit">Submit Payment</button>
+      <div class="status" id="statusMsg">✔️ Payment submitted successfully! Awaiting admin verification.</div>
+    </form>
+    <a href="Landlord-dashboard.html">← Back to Dashboard</a>
+  </div>
+
+  <script>
+    document.getElementById("paymentForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const status = document.getElementById("statusMsg");
+      status.style.display = "block";
+      this.reset();
+    });
+  </script>
+</body>
+</html>

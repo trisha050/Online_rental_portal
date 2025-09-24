@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reply to Tenants | Admin Dashboard</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: linear-gradient(to right, #1f4037, #99f2c8);
+      color: #fff;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #ffcc00;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+      animation: slideDown 1s ease-in-out;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.5);
+      animation: fadeInUp 1.2s ease-in-out;
+    }
+
+    /* Tenant messages */
+    .messages {
+      margin-bottom: 20px;
+    }
+
+    .message {
+      background: rgba(255,255,255,0.1);
+      padding: 15px;
+      margin-bottom: 15px;
+      border-radius: 10px;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+
+    .message:hover {
+      background: rgba(255, 204, 0, 0.2);
+      transform: scale(1.02);
+    }
+
+    .message strong {
+      color: #ffcc00;
+    }
+
+    /* Reply form */
+    .reply-form {
+      display: none;
+      background: rgba(255,255,255,0.15);
+      padding: 15px;
+      border-radius: 10px;
+      margin-top: 15px;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: bold;
+      color: #ffcc00;
+    }
+
+    textarea {
+      width: 100%;
+      padding: 12px;
+      border-radius: 8px;
+      border: none;
+      outline: none;
+      resize: none;
+      margin-bottom: 12px;
+      font-size: 15px;
+    }
+
+    button {
+      background: #ffcc00;
+      border: none;
+      padding: 12px 18px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #f39c12;
+      transform: scale(1.05);
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeInUp {
+      from { transform: translateY(30px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes slideDown {
+      from { transform: translateY(-40px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    .success {
+      display: none;
+      margin-top: 10px;
+      color: #2ecc71;
+      font-weight: bold;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>📨 Admin Reply to Tenants</h1>
+
+  <div class="container">
+    <div class="messages">
+      <div class="message" onclick="openReply('John Doe')">
+        <strong>John Doe</strong> - "Can I delay my rent payment?"
+      </div>
+      <div class="message" onclick="openReply('Mary Banda')">
+        <strong>Mary Banda</strong> - "There’s an issue with the electricity."
+      </div>
+      <div class="message" onclick="openReply('Peter Mwila')">
+        <strong>Peter Mwila</strong> - "Can I request maintenance for the water pump?"
+      </div>
+    </div>
+
+    <!-- Reply Form -->
+    <div class="reply-form" id="replyForm">
+      <h3 id="tenantName"></h3>
+      <form id="formReply">
+        <label for="reply">Your Reply (Admin)</label>
+        <textarea id="reply" rows="4" placeholder="Type your reply here..." required></textarea>
+        <button type="submit">Send Reply</button>
+      </form>
+      <div class="success" id="successMsg">✅ Reply sent to tenant!</div>
+    </div>
+  </div>
+
+  <script>
+    function openReply(tenant) {
+      document.getElementById("replyForm").style.display = "block";
+      document.getElementById("tenantName").textContent = "Replying to: " + tenant;
+    }
+
+    // Handle reply submission
+    document.getElementById("formReply").addEventListener("submit", function(e) {
+      e.preventDefault();
+      document.getElementById("successMsg").style.display = "block";
+      document.getElementById("reply").value = "";
+
+      // Hide success message after 3s
+      setTimeout(() => {
+        document.getElementById("successMsg").style.display = "none";
+      }, 3000);
+    });
+  </script>
+
+</body>
+</html>

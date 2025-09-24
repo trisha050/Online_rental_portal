@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Apply for a Property</title>
+  <style>
+    /* Reset & Body */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+    body {
+      background-image: url('Images/R.webp');
+      background-repeat: no-repeat;
+      background-size: cover;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    /* Container */
+    .container {
+      width: 100%;
+      max-width: 600px;
+      background: rgba(255, 255, 255, 0.15); /* Transparent box */
+      backdrop-filter: blur(10px); /* Frosted glass effect */
+      padding: 40px 30px;
+      border-radius: 15px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+      color: #fff;
+      animation: fadeIn 1s ease forwards;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(-20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Heading */
+    h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 30px;
+    }
+
+    /* Form Labels & Inputs */
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 8px;
+      color: #fff;
+      font-size: 14px;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 12px 15px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.5);
+      background: rgba(255,255,255,0.1);
+      color: #fff;
+      font-size: 16px;
+    }
+
+    input::placeholder, textarea::placeholder {
+      color: rgba(255,255,255,0.7);
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    /* Submit Button */
+    button {
+      width: 100%;
+      padding: 14px;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 8px;
+      border: none;
+      background: rgba(75,108,183,0.85);
+      color: #fff;
+      cursor: pointer;
+      transition: 0.3s all;
+    }
+    button:hover {
+      background: rgba(75,108,183,1);
+      transform: translateY(-2px);
+    }
+
+    /* Back Link at bottom */
+    .back-link {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      background: rgba(255,255,255,0.2);
+      color: #fff;
+      transition: 0.3s all;
+    }
+    .back-link:hover {
+      background: rgba(75,108,183,0.8);
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .container {
+        padding: 30px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Apply for a Property</h2>
+    <form id="applyForm" action="apply_property.php" method="POST">
+      <label for="property">Select Property</label>
+      <select id="property" name="property" required>
+        <option value="">-- Select Property --</option>
+        <option value="2bed-apartment">2 Bedroom Apartment - Lusaka</option>
+        <option value="studio-flat">Studio Flat - Kitwe</option>
+      </select>
+
+      <label for="applicantName">Full Name</label>
+      <input type="text" id="applicantName" name="applicantName" placeholder="Your full name" required />
+
+      <label for="contact">Contact Number</label>
+      <input type="tel" id="contact" name="contact" placeholder="Your phone number" required />
+
+      <label for="message">Additional Message</label>
+      <textarea id="message" name="message" placeholder="Any additional info (optional)"></textarea>
+
+      <button type="submit">Submit Application</button>
+    </form>
+
+    <a href="Tenant-dashboard.html" class="back-link">← Back to Tenant Dashboard</a>
+  </div>
+
+</body>
+</html>

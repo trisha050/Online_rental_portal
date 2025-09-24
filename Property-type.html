@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Property Types | Renter Portal</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    body {
+      background: url('Images/musonda.jpg') no-repeat center center fixed;
+      background-size: cover;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      color: #333;
+    }
+
+    /* Navbar */
+    nav.menu {
+      background-color: rgba(0, 51, 102, 0.9);
+      padding: 15px 20px;
+    }
+
+    nav.menu ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav.menu ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 8px 12px;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+
+    nav.menu ul li a:hover,
+    nav.menu ul li a.active {
+      background-color: #ffcc00;
+      color: #003366;
+    }
+
+    /* Main Content */
+    main.content {
+      max-width: 1000px;
+      margin: 80px auto;
+      padding: 40px;
+      background-color: rgba(255, 255, 255, 0.85);
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+
+    main.content h1 {
+      text-align: center;
+      color: #003366;
+      margin-bottom: 40px;
+      font-size: 2.5rem;
+    }
+
+    /* Property Cards Grid */
+    .property-type-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .type-card {
+      background: white;
+      border-radius: 12px;
+      padding: 25px 20px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 2px solid transparent;
+    }
+
+    .type-card:hover {
+      transform: translateY(-5px) scale(1.05);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+      border-color: #003366;
+    }
+
+    .type-card i {
+      font-size: 50px;
+      color: #003366;
+      margin-bottom: 15px;
+    }
+
+    .type-card h3 {
+      margin-bottom: 10px;
+      color: #003366;
+      font-size: 1.5rem;
+    }
+
+    .type-card p {
+      font-size: 1rem;
+      line-height: 1.5;
+      margin-bottom: 15px;
+    }
+
+    .type-card a {
+      display: inline-block;
+      margin-top: 10px;
+      color: #0056b3;
+      font-weight: bold;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .type-card a:hover {
+      text-decoration: underline;
+      color: #003366;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      main.content {
+        margin: 40px 20px;
+        padding: 30px;
+      }
+
+      .type-card i {
+        font-size: 40px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="menu">
+    <ul class="nav-links">
+      <li><a href="index.html"><i class="fas fa-home"></i> HOME</a></li>
+      <li><a href="About.html"><i class="fas fa-info-circle"></i> ABOUT</a></li>
+      <li><a href="property-types.html" class="active"><i class="fas fa-building"></i> PROPERTY TYPE</a></li>
+      <li><a href="contact.html"><i class="fas fa-envelope"></i> CONTACT</a></li>
+    </ul>
+  </nav>
+
+  <!-- Property Types Section -->
+  <main class="content">
+    <h1><i class="fas fa-th-list"></i> Property Types</h1>
+    <div class="property-type-grid">
+
+      <!-- Apartments -->
+      <div class="type-card">
+        <i class="fas fa-city"></i>
+        <h3>Apartments</h3>
+        <p>Modern apartments available in urban areas.</p>
+        <a href="Property.html#apartments">Browse Apartments</a>
+      </div>
+
+      <!-- Houses -->
+      <div class="type-card">
+        <i class="fas fa-home"></i>
+        <h3>Houses</h3>
+        <p>Spacious family homes in residential neighborhoods.</p>
+        <a href="Property.html#houses">Browse Houses</a>
+      </div>
+
+    </div>
+  </main>
+
+</body>
+</html>

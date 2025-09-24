@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Application Status | Tenant Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #f0f2f5, #e0f7fa);
+      min-height: 100vh;
+      padding: 30px 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 850px;
+      background: #fff;
+      padding: 35px 25px;
+      border-radius: 18px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+      animation: fadeIn 0.9s ease-in-out;
+    }
+
+    h2 {
+      text-align: center;
+      color: #003366;
+      margin-bottom: 25px;
+      font-size: 28px;
+      font-weight: 700;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 15px;
+    }
+
+    th, td {
+      padding: 14px 12px;
+      text-align: left;
+    }
+
+    th {
+      background: #2563eb;
+      color: white;
+      font-weight: 600;
+      font-size: 15px;
+    }
+
+    tr {
+      transition: background 0.3s ease;
+      animation: slideUp 0.8s ease both;
+    }
+
+    tr:nth-child(even) {
+      background: #f9fafb;
+    }
+
+    tr:hover {
+      background: #eff6ff;
+    }
+
+    /* Status pill styles */
+    .status {
+      padding: 6px 14px;
+      border-radius: 14px;
+      font-weight: 600;
+      font-size: 13px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      opacity: 0;
+      transform: scale(0.8);
+      animation: popIn 0.6s forwards;
+    }
+
+    .status i {
+      font-size: 12px;
+    }
+
+    .status-pending {
+      background: #fef3c733;
+      color: #f59e0b;
+      animation-delay: 0.2s;
+    }
+
+    .status-approved {
+      background: #dcfce733;
+      color: #16a34a;
+      animation-delay: 0.4s;
+    }
+
+    .status-rejected {
+      background: #fee2e233;
+      color: #dc2626;
+      animation-delay: 0.6s;
+    }
+
+    a.back-link {
+      display: inline-block;
+      margin-top: 30px;
+      text-align: center;
+      color: #2563eb;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 15px;
+      transition: color 0.3s;
+    }
+
+    a.back-link:hover {
+      color: #1d4ed8;
+      text-decoration: underline;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes popIn {
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Responsive */
+    @media (max-width: 650px) {
+      table, th, td {
+        font-size: 13px;
+      }
+      .container {
+        padding: 25px 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>My Application Status</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Property</th>
+        <th>Date Applied</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody id="statusTable">
+      <!-- Rows will be inserted by JS -->
+    </tbody>
+  </table>
+
+  <a href="Tenant-dashboard.html" class="back-link">← Back to Dashboard</a>
+</div>
+
+<script>
+  // Sample application data (in real app, fetch from backend)
+  const applications = [
+    { property: "Apartment A - Downtown", date: "2025-09-18", status: "pending" },
+    { property: "House B - Woodlands", date: "2025-09-20", status: "approved" },
+    { property: "Flat C - Roma", date: "2025-09-22", status: "rejected" }
+  ];
+
+  const table = document.getElementById("statusTable");
+
+  applications.forEach((app, index) => {
+    const row = document.createElement("tr");
+    row.style.animationDelay = `${index * 0.2}s`;
+
+    row.innerHTML = `
+      <td>${app.property}</td>
+      <td>${app.date}</td>
+      <td>
+        <span class="status status-${app.status}">
+          <i class="fas ${
+            app.status === "approved" ? "fa-check-circle" :
+            app.status === "rejected" ? "fa-times-circle" :
+            "fa-hourglass-half"
+          }"></i>
+          ${app.status.charAt(0).toUpperCase() + app.status.slice(1)}
+        </span>
+      </td>
+    `;
+    table.appendChild(row);
+  });
+</script>
+
+</body>
+</html>

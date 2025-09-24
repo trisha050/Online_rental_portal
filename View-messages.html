@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>View Messages - Real Estate Portal</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #eef2f3, #dfe9f3);
+      padding: 40px 20px;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background-color: #ffffffcc; /* semi-transparent */
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      animation: fadeIn 1s ease;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #2c3e50;
+      font-size: 2rem;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    }
+
+    /* Message box styling */
+    .message {
+      background: #f0f4f8;
+      padding: 1.2rem 1rem;
+      border-left: 5px solid #3498db;
+      margin-bottom: 1.2rem;
+      border-radius: 6px;
+      transition: background 0.3s ease;
+    }
+
+    .message:hover {
+      background: #e1e8ef;
+    }
+
+    .message strong {
+      color: #2c3e50;
+      font-weight: bold;
+    }
+
+    .message p {
+      margin-top: 0.5rem;
+      color: #34495e;
+    }
+
+    /* Placeholder for no messages */
+    .placeholder {
+      text-align: center;
+      color: #7f8c8d;
+      font-style: italic;
+      padding: 2rem 0;
+      border: 2px dashed #bdc3c7;
+      border-radius: 6px;
+    }
+
+    a.back-link {
+      display: inline-block;
+      margin-top: 2rem;
+      text-decoration: none;
+      font-weight: bold;
+      color: #2980b9;
+      font-size: 16px;
+    }
+
+    a.back-link:hover {
+      text-decoration: underline;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>View Messages</h1>
+
+    <!-- Example messages -->
+    <div class="message">
+      <strong>Mary Zulu:</strong>
+      <p>Hello, I need help with my rent payment. Can you assist?</p>
+    </div>
+
+    <div class="message">
+      <strong>James Banda:</strong>
+      <p>My listing is not showing on the portal. Please verify.</p>
+    </div>
+
+    <!-- Placeholder if there are no messages -->
+    <div class="placeholder">
+      No messages yet. Messages from tenants will appear here.
+    </div>
+
+    <a href="Admin-dashboard.html" class="back-link">← Back to Admin Dashboard</a>
+  </div>
+
+</body>
+</html>

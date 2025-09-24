@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tenant Dashboard</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+      background: url('Images/T.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+    }
+
+    /* Sidebar Menu */
+    .sidebar {
+      width: 220px;
+      background: rgba(0, 51, 102, 0.9);
+      padding-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      animation: slideIn 1.5s ease forwards;
+      opacity: 0;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .sidebar ul li {
+      margin: 1rem 0;
+      text-align: center;
+    }
+
+    .sidebar ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      display: block;
+      padding: 12px;
+      border-radius: 6px;
+      transition: 0.3s;
+    }
+
+    .sidebar ul li a:hover {
+      background: #ffcc00;
+      color: #003366;
+    }
+
+    /* Main Content */
+    .content {
+      flex: 1;
+      padding: 2rem;
+      margin: 1rem;
+      animation: fadeIn 2s ease forwards;
+      opacity: 0;
+    }
+
+    .content h1 {
+      margin-bottom: 1rem;
+      color: #ffcc00;
+      text-shadow: 2px 2px 5px black;
+    }
+
+    .content p {
+      margin-bottom: 1.5rem;
+      font-size: 1.1rem;
+      color: #ecf0f1;
+      text-shadow: 1px 1px 3px black;
+    }
+
+    .content ul {
+      padding-left: 1.5rem;
+      list-style: disc;
+    }
+
+    .content li {
+      margin: 0.5rem 0;
+      font-weight: bold;
+      color: #ecf0f1;
+      text-shadow: 1px 1px 3px black;
+    }
+
+    /* Animations */
+    @keyframes slideIn {
+      from {
+        transform: translateX(-100%);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Sidebar Menu -->
+  <nav class="sidebar">
+    <ul>
+      <li><a href="Browse-properties.html"><i class="fas fa-search"></i> Browse-Properties</a></li>
+      <li><a href="Submit-inquiry.html"><i class="fas fa-envelope"></i> Submit-Inquiry</a></li>
+      <li><a href="Apply-property.html"><i class="fas fa-file-signature"></i> Apply-for-Property</a></li>
+      <li><a href="View-application-status.html"><i class="fas fa-info-circle"></i> View-Status</a></li>
+      <li><a href="logout.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+    </ul>
+  </nav>
+
+  <!-- Dashboard Content -->
+  <main class="content">
+    <h1>Tenant Dashboard</h1>
+    <p>Welcome, Tenant! Use the options on the left to browse properties, submit inquiries, apply for rentals, and check your application status.</p>
+  </main>
+</body>
+</html>

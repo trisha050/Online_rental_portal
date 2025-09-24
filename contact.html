@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Renter Portal</title>
+
+  <!-- Font Awesome for icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"  
+  />
+
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: url('Images/h1.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    /* Navigation Bar */
+    nav.menu {
+      background: rgba(0, 0, 0, 0.8);
+      padding: 15px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav.menu .nav-links {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      list-style: none;
+    }
+
+    nav.menu .nav-links li a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: bold;
+      padding: 8px 14px;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+    }
+
+    nav.menu .nav-links li a:hover {
+      background: #0078d7;
+      color: #fff;
+    }
+
+    nav.menu .nav-links li a.active {
+      background: #00bcd4;
+      color: white;
+    }
+
+    /* Contact Section */
+    h1 {
+      font-size: 2.5rem;
+      margin: 50px 0 20px;
+      color: #00bcd4;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin: 10px 0;
+    }
+
+    a {
+      color: #00bcd4;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="menu">
+    <ul class="nav-links">
+      <li><a href="index.html"><i class="fas fa-home"></i> HOME</a></li>
+      <li><a href="About.html"><i class="fas fa-info-circle"></i> ABOUT</a></li>
+      <li><a href="Property type.html"><i class="fas fa-building"></i> PROPERTY TYPE</a></li>
+      <li><a href="contact.html" class="active"><i class="fas fa-envelope"></i> CONTACT</a></li>
+    </ul>
+  </nav>
+
+  <!-- Contact Info -->
+  <h1>Contact Us</h1>
+  <p>Email: <a href="mailto:support@renterportal.com">support@renterportal.com</a></p>
+  <p>Phone: +260 973 611 079 / +260 764 714 672</p>
+  <p>For assistance, reach out to our support team anytime.</p>
+
+</body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>View Tenants | Admin Dashboard</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; background: #f4f4f4; }
+    h1 { color: #2c3e50; }
+  </style>
+</head>
+<body>
+</body><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>View Tenants | Admin Dashboard</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: linear-gradient(to right, #2c3e50, #4ca1af);
+      color: #fff;
+      animation: fadeIn 1.2s ease-in-out;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #f1c40f;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+      animation: slideDown 1s ease-in-out;
+    }
+
+    .search-box {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .search-box input {
+      padding: 10px;
+      width: 60%;
+      border: none;
+      border-radius: 20px;
+      outline: none;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    .search-box input:focus {
+      transform: scale(1.05);
+      box-shadow: 0 0 10px #f1c40f;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      overflow: hidden;
+      animation: fadeInUp 1.5s ease-in-out;
+    }
+
+    thead {
+      background: rgba(0, 0, 0, 0.6);
+    }
+
+    thead th {
+      padding: 15px;
+      text-align: left;
+      color: #f1c40f;
+      text-transform: uppercase;
+    }
+
+    tbody tr {
+      transition: 0.3s;
+    }
+
+    tbody tr:hover {
+      background: rgba(243, 156, 18, 0.7);
+      transform: scale(1.01);
+    }
+
+    tbody td {
+      padding: 12px 15px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeInUp {
+      from { transform: translateY(30px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes slideDown {
+      from { transform: translateY(-50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>👥 View Tenants</h1>
+
+  <!-- Search Box -->
+  <div class="search-box">
+    <input type="text" id="searchInput" placeholder="🔍 Search tenants by name, email or phone...">
+  </div>
+
+  <!-- Tenants Table -->
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Tenant Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Property Rented</th>
+        <th>Joined Date</th>
+      </tr>
+    </thead>
+    <tbody id="tenantTable">
+      <tr>
+        <td>1</td>
+        <td>John Smith</td>
+        <td>john@example.com</td>
+        <td>+260 978 123 456</td>
+        <td>2-Bedroom Apartment</td>
+        <td>2025-01-12</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Mary Banda</td>
+        <td>mary@example.com</td>
+        <td>+260 955 654 321</td>
+        <td>Studio Apartment</td>
+        <td>2025-02-03</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>David Phiri</td>
+        <td>david@example.com</td>
+        <td>+260 977 987 654</td>
+        <td>3-Bedroom House</td>
+        <td>2025-03-18</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>Linda Mwale</td>
+        <td>linda@example.com</td>
+        <td>+260 967 246 810</td>
+        <td>1-Bedroom Flat</td>
+        <td>2025-04-25</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <script>
+    // Search Functionality
+    document.getElementById("searchInput").addEventListener("keyup", function() {
+      let filter = this.value.toLowerCase();
+      let rows = document.querySelectorAll("#tenantTable tr");
+
+      rows.forEach(row => {
+        let text = row.textContent.toLowerCase();
+        row.style.display = text.includes(filter) ? "" : "none";
+      });
+    });
+  </script>
+
+</body>
+</html>
+
+</html>

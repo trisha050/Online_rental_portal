@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>View Status | Landlord Dashboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #2c3e50, #34495e);
+      margin: 0;
+      padding: 0;
+      color: #ecf0f1;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 50px auto;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      animation: fadeIn 1.5s ease;
+    }
+
+    h1 {
+      text-align: center;
+      color: #f1c40f;
+      text-shadow: 2px 2px 5px black;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      animation: slideUp 1.2s ease;
+    }
+
+    th, td {
+      padding: 15px;
+      text-align: center;
+      border-bottom: 1px solid #555;
+    }
+
+    th {
+      background: #f39c12;
+      color: black;
+    }
+
+    tr:hover {
+      background: rgba(255, 255, 255, 0.1);
+      transition: 0.3s;
+    }
+
+    .status {
+      font-weight: bold;
+      padding: 5px 10px;
+      border-radius: 6px;
+      animation: pulse 2s infinite;
+    }
+
+    .pending {
+      background: #f1c40f;
+      color: black;
+    }
+
+    .approved {
+      background: #27ae60;
+      color: white;
+    }
+
+    .rejected {
+      background: #e74c3c;
+      color: white;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>📊 Property Request Status</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Property Name</th>
+          <th>Date Submitted</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>2-Bedroom Apartment</td>
+          <td>2025-09-01</td>
+          <td><span class="status pending">Pending</span></td>
+        </tr>
+        <tr>
+          <td>Luxury Villa</td>
+          <td>2025-09-05</td>
+          <td><span class="status approved">Approved</span></td>
+        </tr>
+        <tr>
+          <td>Studio Flat</td>
+          <td>2025-09-10</td>
+          <td><span class="status rejected">Rejected</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>
